@@ -12,7 +12,7 @@ bluetooth.startUartService()
 basic.showIcon(IconNames.Square)
 basic.forever(function () {
     if (connected == 1) {
-        bluetooth.uartWriteNumber(input.lightLevel())
+        bluetooth.uartWriteString("" + input.acceleration(Dimension.X) + "," + input.acceleration(Dimension.Y) + "," + input.acceleration(Dimension.Z))
         basic.pause(100)
     }
 })
